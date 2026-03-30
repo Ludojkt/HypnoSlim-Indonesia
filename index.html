@@ -2061,9 +2061,73 @@
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
 
+        /* ===== MOBILE HAMBURGER MENU ===== */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1002;
+            background: none;
+            border: none;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2.5px;
+            background: var(--forest);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ===== MOBILE STICKY CTA ===== */
+        .mobile-sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            padding: 12px 16px;
+            background: rgba(251,247,240,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(11,59,45,0.08);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+        }
+
+        .mobile-sticky-cta a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 14px 24px;
+            background: var(--forest);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-xs);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 968px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-grid { grid-template-columns: 1fr; gap: 32px; }
             .hero-visual { order: -1; }
             .bmi-grid { grid-template-columns: 1fr; gap: 40px; }
             .transform-grid { grid-template-columns: 1fr; }
@@ -2071,23 +2135,246 @@
             .science-grid { grid-template-columns: 1fr 1fr; }
             .packages-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
             .testimonials-grid { grid-template-columns: 1fr; }
+            .celeb-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto 28px; }
+            .celeb-strip { grid-template-columns: 1fr 1fr; }
+            .trust-grid { grid-template-columns: 1fr 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
-            .nav-links { display: none; }
+
+            /* Mobile nav */
+            .nav-toggle { display: flex; }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(251,247,240,0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                z-index: 1001;
+                padding: 80px 24px 40px;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-links li { list-style: none; }
+            .nav-links a {
+                font-size: 1.2rem !important;
+                padding: 12px 24px;
+                display: block;
+            }
+            .nav-links .nav-cta {
+                margin-top: 16px;
+                font-size: 1rem !important;
+                padding: 14px 36px !important;
+            }
         }
 
         @media (max-width: 640px) {
-            section { padding: 72px 0; }
-            .stories-grid { grid-template-columns: 1fr; }
-            .science-grid { grid-template-columns: 1fr; }
-            .quiz-options { grid-template-columns: 1fr; }
-            .hero-stats { flex-direction: column; gap: 16px; }
+            /* Base */
+            html { font-size: 15px; }
+            section { padding: 56px 0; }
+            .container { padding: 0 16px; }
+            .section-header { margin-bottom: 32px; }
+            .section-title { font-size: 1.7rem; }
+            .section-sub { font-size: 0.88rem; }
+
+            /* Hero - mobile first */
+            .hero { min-height: auto; padding-top: 72px; padding-bottom: 40px; }
+            .hero-grid { gap: 24px; }
+            .hero h1 { font-size: 2rem; }
+            .hero-sub { font-size: 1rem; margin-bottom: 24px; }
+            .hero-badge { font-size: 0.72rem; padding: 6px 14px; }
+            .hero-card { max-width: 100%; }
+            .hero-card-body { padding: 20px; }
+            .hero-card-body h3 { font-size: 1rem; }
+            .hero-card-body p { font-size: 0.85rem; }
+            .hero-stats {
+                flex-direction: row;
+                gap: 0;
+                justify-content: space-between;
+                text-align: center;
+                background: var(--cream);
+                border-radius: var(--radius-sm);
+                padding: 16px 12px;
+            }
+            .hero-stat { flex: 1; }
+            .hero-stat-num { font-size: 1.6rem; }
+            .hero-stat-label { font-size: 0.72rem; }
             .hero-buttons { flex-direction: column; }
-            .hero-buttons a, .hero-buttons button { width: 100%; text-align: center; justify-content: center; }
-            .vs-header, .vs-row { grid-template-columns: 1.5fr 1fr 1fr; }
-            .vs-cell { padding: 14px 16px; font-size: 0.82rem; }
-            .donut-chart { flex-direction: column; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .guarantee-card { padding: 40px 24px; }
+            .hero-buttons a, .hero-buttons button {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+                padding: 14px 24px;
+                font-size: 0.95rem;
+            }
+            .floating-badge { display: none; }
+
+            /* Social proof strip */
+            .social-proof-strip { padding: 32px 0 !important; }
+
+            /* Lifestyle banner - 2 cols on mobile */
+            .lifestyle-banner { height: 260px !important; }
+            .lifestyle-banner-grid { grid-template-columns: 1fr 1fr !important; height: 100% !important; }
+            .lifestyle-banner-grid > div:nth-child(n+3) { display: none; }
+            .lifestyle-banner-text { font-size: 1.1rem !important; }
+
+            /* BMI / Quiz */
+            .bmi-calc { padding: 24px; }
+            .bmi-row { grid-template-columns: 1fr; }
+            .bmi-input { padding: 12px 16px; font-size: 0.95rem; }
+            .quiz-container { padding: 0; }
+            .quiz-question { font-size: 1.3rem; }
+            .quiz-question-sub { font-size: 0.85rem; }
+            .quiz-options { grid-template-columns: 1fr; gap: 10px; }
+            .quiz-option { padding: 16px 18px; }
+            .quiz-option-icon { font-size: 1.3rem; margin-bottom: 4px; }
+            .quiz-option-title { font-size: 0.88rem; }
+            .quiz-result-score { width: 90px; height: 90px; font-size: 1.8rem; }
+
+            /* Quiz result stats grid */
+            .quiz-result-stats { grid-template-columns: 1fr 1fr 1fr !important; gap: 8px !important; }
+            .quiz-result-stats > div { padding: 14px 8px !important; }
+            .quiz-result-stats .stat-value { font-size: 1.4rem !important; }
+            .quiz-result-stats .stat-label { font-size: 0.65rem !important; }
+
+            /* Transformation data */
+            .transform-grid { gap: 24px; }
+            .chart-card { padding: 24px; }
+            .chart-card-title { font-size: 1rem; }
+            .bar-chart { height: 160px; gap: 16px; }
+            .donut-chart { flex-direction: column; align-items: center; }
+            .donut-svg { width: 150px; height: 150px; }
+
+            /* Stories */
+            .stories-grid { grid-template-columns: 1fr; gap: 20px; }
+            .story-visual { height: 260px; }
+            .story-body { padding: 18px 20px; }
+            .story-name { font-size: 0.92rem; }
+
+            /* Celebrity section */
+            .celeb-grid { max-width: 100%; margin-bottom: 24px; }
+            .celeb-img-wrap { height: 220px; }
+            .celeb-info { padding: 20px; }
+            .celeb-name { font-size: 1.1rem; }
+            .celeb-quote { font-size: 0.82rem; }
+            .celeb-strip { grid-template-columns: 1fr; gap: 10px; }
+            .celeb-mini { padding: 12px 16px; gap: 12px; }
+            .celeb-mini-avatar { width: 40px; height: 40px; }
+            .celeb-mini-name { font-size: 0.85rem; }
+            .celeb-mini-detail { font-size: 0.72rem; }
+            .celeb-quote-box { padding: 28px 20px; }
+            .celeb-quote-text { font-size: 1.1rem; }
+
+            /* VS comparison table */
+            .vs-header, .vs-row { grid-template-columns: 1.2fr 1fr 1fr; }
+            .vs-header-cell { padding: 14px 12px; font-size: 0.78rem; }
+            .vs-cell { padding: 12px; font-size: 0.78rem; }
+            .vs-feature { font-size: 0.78rem; }
+            .vs-check { width: 24px; height: 24px; font-size: 0.75rem; }
+
+            /* Life transformation section */
+            .life-grid { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+
+            /* Science */
+            .science-grid { grid-template-columns: 1fr; gap: 16px; }
+            .science-card { padding: 24px; }
+            .line-chart-container { height: 220px; margin-top: 16px; }
+            .science-big-chart { padding: 20px; }
+
+            /* Packages */
+            .packages-grid { grid-template-columns: 1fr; max-width: 100%; }
+            .package-card { padding: 28px 24px; }
+            .package-price { font-size: 2.2rem; }
+            .package-name { font-size: 1.3rem; }
+            .package-features li { font-size: 0.85rem; padding: 8px 0; }
+
+            /* Trust section */
+            .trust-section { padding: 56px 0 32px; }
+            .trust-header { margin-bottom: 32px; }
+            .trust-header h3 { font-size: 1.2rem; }
+            .trust-payments {
+                padding: 20px 16px;
+                gap: 10px;
+                border-radius: var(--radius-sm);
+            }
+            .trust-payments-label {
+                width: 100%;
+                text-align: center;
+                margin-right: 0;
+                margin-bottom: 8px;
+            }
+            .trust-pay-logo { height: 26px; max-width: 80px; padding: 3px 6px; }
+            .trust-pay-divider { display: none; }
+            .trust-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .trust-card { padding: 20px 16px; }
+            .trust-card-icon { width: 56px; height: 56px; margin-bottom: 12px; }
+            .trust-card-icon svg { width: 56px; height: 56px; }
+            .trust-card-title { font-size: 0.92rem; }
+            .trust-card-desc { font-size: 0.75rem; }
+            .trust-seal-bar {
+                gap: 16px;
+                padding: 16px;
+                flex-direction: column;
+                align-items: flex-start;
+                border-radius: var(--radius-xs);
+            }
+            .trust-seal { font-size: 0.78rem; }
+
+            /* Testimonials */
+            .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+            .testimonial-card { padding: 24px; }
+            .testimonial-text { font-size: 0.88rem; }
+
+            /* Guarantee */
+            .guarantee-card { padding: 32px 20px; }
+            .guarantee-card h2 { font-size: 1.5rem; }
+            .guarantee-card p { font-size: 0.9rem; }
+            .guarantee-icon { width: 64px; height: 64px; font-size: 1.6rem; }
+
+            /* CTA */
+            .cta-section { padding: 72px 0 100px; }
+            .cta-section h2 { font-size: 1.8rem; }
+            .cta-section p { font-size: 0.95rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .cta-buttons a, .cta-buttons button {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+            .btn-gold { padding: 16px 32px; font-size: 0.95rem; }
+
+            /* Footer */
+            .footer { padding: 48px 0 100px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+            .footer-disclaimer { font-size: 0.7rem; padding: 16px; }
+
+            /* Show mobile sticky CTA */
+            .mobile-sticky-cta { display: block; }
+
+            /* Reduce body bottom padding for sticky CTA */
+            body { padding-bottom: 68px; }
+        }
+
+        /* Extra small phones */
+        @media (max-width: 380px) {
+            html { font-size: 14px; }
+            .container { padding: 0 12px; }
+            .hero h1 { font-size: 1.75rem; }
+            .hero-stats { padding: 12px 8px; }
+            .hero-stat-num { font-size: 1.4rem; }
+            .quiz-question { font-size: 1.15rem; }
+            .trust-grid { grid-template-columns: 1fr; }
+            .life-grid { grid-template-columns: 1fr !important; }
+            .vs-header, .vs-row { grid-template-columns: 1fr 0.8fr 0.8fr; }
         }
     </style>
 </head>
@@ -2100,7 +2387,12 @@
             <div class="logo-leaf">H</div>
             HypnoSlim
         </a>
-        <ul class="nav-links">
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
             <li><a href="#bmi">Quiz & BMI</a></li>
             <li><a href="#transformasi">Transformasi</a></li>
             <li><a href="#selebriti">Selebriti</a></li>
@@ -2167,7 +2459,7 @@
 </section>
 
 <!-- SOCIAL PROOF STRIP -->
-<section style="padding: 48px 0; background: white; border-top: 1px solid rgba(11,59,45,0.06); border-bottom: 1px solid rgba(11,59,45,0.06);">
+<section class="social-proof-strip" style="padding: 48px 0; background: white; border-top: 1px solid rgba(11,59,45,0.06); border-bottom: 1px solid rgba(11,59,45,0.06);">
     <div class="container" style="text-align: center;">
         <div style="display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
             <div style="display: flex; align-items: center;">
@@ -2186,8 +2478,8 @@
 </section>
 
 <!-- LIFESTYLE PHOTO BANNER -->
-<section style="padding: 0; overflow: hidden; position: relative; height: 400px;">
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); height: 100%;">
+<section class="lifestyle-banner" style="padding: 0; overflow: hidden; position: relative; height: 400px;">
+    <div class="lifestyle-banner-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); height: 100%;">
         <div style="position: relative; overflow: hidden;">
             <img src="https://images.pexels.com/photos/7593004/pexels-photo-7593004.jpeg?auto=compress&cs=tinysrgb&w=400&h=500&fit=crop" alt="Asian woman yoga" style="width: 100%; height: 100%; object-fit: cover;">
             <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(11,59,45,0.5) 0%, transparent 50%);"></div>
@@ -2206,7 +2498,7 @@
         </div>
     </div>
     <div style="position: absolute; bottom: 0; left: 0; right: 0; text-align: center; padding: 32px; z-index: 2;">
-        <p style="color: white; font-family: 'DM Serif Display', serif; font-size: 1.6rem; text-shadow: 0 2px 20px rgba(0,0,0,0.3);">Ubah Gaya Hidup Anda dari Dalam</p>
+        <p class="lifestyle-banner-text" style="color: white; font-family: 'DM Serif Display', serif; font-size: 1.6rem; text-shadow: 0 2px 20px rgba(0,0,0,0.3);">Ubah Gaya Hidup Anda dari Dalam</p>
         <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-top: 4px;">Hipnosis &middot; Meditasi &middot; Mindful Eating &middot; Kesejahteraan</p>
     </div>
 </section>
@@ -2431,7 +2723,7 @@
                     </div>
 
                     <!-- Current Stats -->
-                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 32px;">
+                    <div class="quiz-result-stats" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 32px;">
                         <div style="background: var(--cream); border-radius: var(--radius-sm); padding: 20px; text-align: center;">
                             <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em;">Berat Saat Ini</div>
                             <div id="resultCurrentWeight" style="font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--coral);">-- kg</div>
@@ -2949,7 +3241,7 @@
             <p class="section-sub" style="color: rgba(255,255,255,0.5);">Riset membuktikan: orang yang mencapai berat badan ideal mengalami peningkatan di semua aspek kehidupan.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 48px;">
+        <div class="life-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 48px;">
             <div class="reveal" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 36px 28px; text-align: center; backdrop-filter: blur(10px); transition: all 0.3s;">
                 <div style="width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, rgba(212,168,83,0.2), rgba(212,168,83,0.05)); display: inline-flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px;">&#128176;</div>
                 <h4 style="color: white; font-size: 1.15rem; margin-bottom: 8px;">Karir & Kekayaan</h4>
@@ -3579,13 +3871,52 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
+        // Close mobile nav if open
+        document.getElementById('navLinks').classList.remove('open');
+        document.getElementById('navToggle').classList.remove('active');
+        document.body.style.overflow = '';
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 });
+
+// ===== MOBILE HAMBURGER MENU =====
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+if (navToggle) {
+    navToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navLinks.classList.toggle('open');
+        document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+    });
+}
+
+// ===== MOBILE STICKY CTA VISIBILITY =====
+const stickyCta = document.getElementById('mobileStickyCta');
+if (stickyCta) {
+    let lastScroll = 0;
+    window.addEventListener('scroll', function() {
+        const scrollY = window.scrollY;
+        // Show after scrolling past hero (300px)
+        if (scrollY > 300) {
+            stickyCta.style.transform = 'translateY(0)';
+        } else {
+            stickyCta.style.transform = 'translateY(100%)';
+        }
+        lastScroll = scrollY;
+    }, { passive: true });
+}
 </script>
+
+<!-- Mobile Sticky CTA -->
+<div class="mobile-sticky-cta" id="mobileStickyCta" style="transform: translateY(100%); transition: transform 0.3s ease;">
+    <a href="#paket">
+        Mulai Program Sekarang
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h10M10 5l5 7-5 7"/></svg>
+    </a>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.activshape.com)",
+      "WebSearch",
+      "WebFetch(domain:www.pexels.com)",
+      "WebFetch(domain:api.pexels.com)",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "Bash(curl -L -o orlando_bloom.jpg \"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Orlando_Bloom_at_the_2024_Toronto_International_Film_Festival_%28cropped2%29.jpg/150px-Orlando_Bloom_at_the_2024_Toronto_International_Film_Festival_%28cropped2%29.jpg\" -A \"Mozilla/5.0\")",
+      "Bash(curl -L -o tiger_woods.jpg \"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/President_Donald_Trump_hosts_a_reception_honoring_Black_History_Month_%2854341713089%29_%28cropped%29.jpg/150px-President_Donald_Trump_hosts_a_reception_honoring_Black_History_Month_%2854341713089%29_%28cropped%29.jpg\" -A \"Mozilla/5.0\")",
+      "Bash(curl -L -o lily_allen.jpg \"https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/El_Rey_Theatre_-_Lily_Allen_04_25_2018_-4_%2828125957447%29_%28cropped%29.jpg/150px-El_Rey_Theatre_-_Lily_Allen_04_25_2018_-4_%2828125957447%29_%28cropped%29.jpg\" -A \"Mozilla/5.0\")",
+      "Bash(curl -L -o fergie.jpg \"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Fergie_Washington_D.C_2014_%28cropped%29.jpg/150px-Fergie_Washington_D.C_2014_%28cropped%29.jpg\" -A \"Mozilla/5.0\")",
+      "Bash(curl -L -o geri_halliwell.jpg \"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/SpiceGirlWembley150619-69_%2849000357276%29_%28cropped%29.jpg/150px-SpiceGirlWembley150619-69_%2849000357276%29_%28cropped%29.jpg\" -A \"Mozilla/5.0\")",
+      "Bash(ls -la \"C:/Users/user/Desktop/Hypnosis/img/\"*.jpg)",
+      "Bash(curl -L -o orlando_bloom.jpg \"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Orlando_Bloom_at_the_2024_Toronto_International_Film_Festival_%28cropped2%29.jpg/150px-Orlando_Bloom_at_the_2024_Toronto_International_Film_Festival_%28cropped2%29.jpg\" -H \"User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" -H \"Accept: image/webp,image/apng,image/*,*/*;q=0.8\" -H \"Referer: https://en.wikipedia.org/\")",
+      "Bash(curl -L -o orlando_bloom.jpg \"https://commons.wikimedia.org/wiki/Special:FilePath/Orlando_Bloom_at_the_2024_Toronto_International_Film_Festival_\\(cropped2\\).jpg?width=150\" -H \"User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\)\")",
+      "Bash(curl -L -o tiger_woods.jpg \"https://commons.wikimedia.org/wiki/Special:FilePath/President_Donald_Trump_hosts_a_reception_honoring_Black_History_Month_\\(54341713089\\)_\\(cropped\\).jpg?width=150\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(curl -L -o lily_allen.jpg \"https://commons.wikimedia.org/wiki/Special:FilePath/El_Rey_Theatre_-_Lily_Allen_04_25_2018_-4_\\(28125957447\\)_\\(cropped\\).jpg?width=150\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(curl -L -o fergie.jpg \"https://commons.wikimedia.org/wiki/Special:FilePath/Fergie_Washington_D.C_2014_\\(cropped\\).jpg?width=150\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(curl -L -o geri_halliwell.jpg \"https://commons.wikimedia.org/wiki/Special:FilePath/SpiceGirlWembley150619-69_\\(49000357276\\)_\\(cropped\\).jpg?width=150\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(curl -L -o sophie_dahl.jpg \"https://commons.wikimedia.org/wiki/Special:FilePath/Sophie_Dahl_2011_Shankbone.JPG?width=150\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(else echo:*)",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(curl -L -o \"C:\\\\Users\\\\user\\\\Desktop\\\\Hypnosis\\\\img\\\\sophie_dahl.jpg\" \"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Sophie_Dahl_cropped.jpg/150px-Sophie_Dahl_cropped.jpg\")",
+      "Bash(xxd -l 16 \"C:\\\\Users\\\\user\\\\Desktop\\\\Hypnosis\\\\img\\\\sophie_dahl.jpg\")",
+      "Bash(curl -L -H \"User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36\" -H \"Accept: image/webp,image/apng,image/*,*/*;q=0.8\" -o \"C:\\\\Users\\\\user\\\\Desktop\\\\Hypnosis\\\\img\\\\sophie_dahl.jpg\" \"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Sophie_Dahl_cropped.jpg/150px-Sophie_Dahl_cropped.jpg\")",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/user/Desktop/Hypnosis/**)",
+      "Bash(curl -L -o \"C:\\\\Users\\\\user\\\\Desktop\\\\Hypnosis\\\\img\\\\sophie_dahl.jpg\" \"https://commons.wikimedia.org/wiki/Special:FilePath/Sophie_Dahl.jpg?width=150\")",
+      "Bash(xxd -l 16 \"C:\\\\Users\\\\user\\\\Desktop\\\\Hypnosis\\\\img\\\\sophie.jpg\")"
+    ]
+  }
+}
